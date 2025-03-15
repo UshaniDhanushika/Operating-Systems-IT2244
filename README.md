@@ -7,7 +7,7 @@
   * cd → Moves into a specific folder.
   * cd.. → Moves back to the previous folder.
     
-  * time → Shows or lets you set the current time.
+  * time → Shows or lets set the current time.
 
      ![Screenshot 2025-03-15 190025](https://github.com/user-attachments/assets/80391db5-6516-4514-b1fe-663ca9462b4c)
 
@@ -19,7 +19,7 @@
 
     ![Screenshot 2025-03-15 190057](https://github.com/user-attachments/assets/d9d6ec29-2ff7-4c74-a5c3-d86ea3d3199a)
 
-  * color [attr] → Sets the console’s text and background color.
+  * color [attr] →  Specifies color attribute of console output
 
     ![Screenshot 2025-03-15 190135](https://github.com/user-attachments/assets/2fb3bb9a-1900-49e9-8103-5d31302171a1)
 
