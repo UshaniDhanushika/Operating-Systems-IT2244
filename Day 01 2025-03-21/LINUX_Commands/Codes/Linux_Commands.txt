@@ -1,0 +1,217 @@
+1.pwd(Print Working Directory) -> Shows the full path of the current directory.
+
+2.who -> who is currently logged into the system.
+
+2.touch abc.txt
+
+	**Purpose: Create a new empty file if the specified file does not exist.
+	
+	**How it works: 
+		Type the touch filename in the terminal and the system checks 
+		if the file exists. If it doesn't, it creates an empty file with that name.
+	 
+	 
+3.vi abc.txt 
+
+	**Purpose: This command is used to create and edit file text.
+	
+	**How it works: 
+		This command opens the Vi editor. Press "i" (Insert) to type, "Esc" to stop, 
+		and ":wq" to save and exit. Use ":q!" to quit without saving.
+
+
+4.more abc.txt
+
+	**Purpose: This command is used to view the content of a file
+	
+	**How it works: 
+		Type more abc.txt in the terminal, it shows the file's content. 
+		
+
+5.chmod 777 abc.txt 
+
+	**Purpose: This command us for "change mode" and is used to modify file 
+	           permissions.
+
+	**777 means:
+
+		The first 7 gives the owner (user) read, write, and execute permissions.
+
+		The second 7 gives the system read, write, and execute permissions.
+
+		The third 7 gives the group read, write, and execute permissions.
+		
+
+	**How it works: 
+		 In here,
+				
+			7 = 4(read) + 2(write) + 1(execute)
+				
+				-Read (r): View the file.
+
+				-Write (w): Edit or modify the file.
+
+				-Execute (x): Run the file as a program (if it's executable).
+				
+				
+			Calculate 
+				
+				
+			   1	    1    	  1   -> binary( 1 or 0)
+				
+			 (read)  (write)  (execute)
+			 
+		   	 (4         2         1) 
+	Example:
+		
+		*If you want to give 
+			user to read-write-execute  -> 1 1 1 (4 + 2 + 1 ) = 7
+			system to read and write only -> 1 1 0 (4 + 2 + 0) = 6
+			group to execute only -> 0 0 1 (0 + 0 + 1) = 1
+			
+			
+6.ls -ltr 
+	
+	**Purpose: The ls -ltr command is used to list files and directories 
+	in a specific order
+		
+	**How it works:
+		ls: Lists files and directories.
+		
+			-l: Shows detailed information about each file (Given permissions,
+		        user, size, modified date )
+		
+			-t: Sorts the files by the modification time, with the newest 
+		        files first.
+
+			-r: Reverses the files order from oldest to newest
+		
+			-a: Show include hidden files
+		
+		
+7.wc abc.txt
+
+	
+	**Purpose: It is used to count the number of lines, words,
+	           and characters in a file or input.
+	
+	**How it works:
+		
+		if you want to count
+		  - only the number of lines -> wc -l abc.txt
+		  - only the number of words -> wc -w abc.txt
+		  - only the number of characters -> wc -c abc.txt
+		  - maximum line length -> wc -L abc.txt
+		  
+		  
+		  
+8.cut -d, -f1,3 abc.txt  -> extract field 1 and field 3 in abc.txt file
+
+	**Purpose: The cut command is used to extract specific sections 
+	          (like columns or characters) from a file 
+			  
+	**How it works: 
+		
+		cut: cut sections of text.
+
+		 -f: Specifies the fields (columns) to extract.
+
+		 -d: Defines the delimiter that separates the fields (like a 
+		     comma or space)
+			 
+		*If you want to extract a special number of characters from each line
+		you can use, 
+		
+			cut -c1-5 abc.txt -> extract first 5 numbers from each line
+
+9.awk 
+
+	**Purpose: The awk command helps extract and process text, especially in        
+	            columns
+				
+	**How it works:
+	
+		ex:
+		awk '{print $2}' abc.txt -> Get first word/column from second line
+		
+		awk -F',' '{print NF;exit}' abc.txt -> Get number of columns 
+			
+			-F',': Set the delimiter
+			  NF: Represent the number of fields (Columns)
+			exit: Ensures only the first line is checked
+
+
+10.head 
+
+	**Purpose: The head command is used to display the first few lines of a file.
+               By default, it shows the first 10 lines
+			   
+	**How it works:		
+	
+		ex: 
+			head abc.txt -> print first 10 lines
+			head -4 abc.txt -> print first four lines
+			
+		
+		
+11.tail 
+
+	**Purpose: The tail command shows the last few lines of a file. 
+	           By default, it displays the last 10 lines.
+
+	**How it works: 
+	
+		ex: 
+			tail abc.txt -> print last 10 lines
+			tail -3 abc.txt -> print last three lines
+			
+
+			
+12.head -n7 abc.txt | tail -n1 
+
+	**Purpose: Print line 7 only
+	
+	**How it works:
+	
+		head -n7 abc.txt: Displays the first 7 lines of the file abc.txt
+		
+		|: The pipe (|) sends the output of the head command as input 
+		   to the tail command.
+
+		tail -n1: From the 7 lines provided by the head, it shows only the 
+		          last line (which is the 7th line).
+				  
+
+13.head -n8 abc.txt | grep 'Weroni'
+
+	**Purpose: searches for lines containing "Weroni" within the first 8
+	           lines of abc.txt.
+			   
+	**How it works: 
+		
+		head -n10 abc.txt → Gets the first 10 lines of abc.txt.
+		
+		| grep 'Weroni' → Filters and displays only the lines that 
+		                  contain "Weroni" from those 10 lines.
+						  
+		*The grep command used to search specific text in a file
+		
+
+14.sed 
+	 **Purpose: The sed command is used to find, replace, delete, or 
+	            modify text in a file.
+	 
+	 **How it works:
+		
+		Replace text:
+			sed 's/old/new/' abc.txt -> replace the 'old' with 'new' in each line
+
+			ex:
+				sed 's/2001/2000/' abc.txt -> replace 2001 into 2000
+				
+		Delete lines containing a word:
+			sed '/word/d' abc.txt -> Removes lines that contain "word"
+			
+			ex: sed '/Edwin/d' abc.txt -> Remove line four because it contain "Edwin"
+
+		
