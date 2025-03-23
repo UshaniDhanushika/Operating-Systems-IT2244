@@ -12,5 +12,11 @@
 
   | Codes | Output |
   |-------|--------|
-  
-  
+  |['Linux_Commands.txt'](./LINUX_Commands/Codes/Linux_Commands.txt)|![Image1.png](./LINUX_Commands/Outputs/Image1.png)|
+  | |![Image2.png](./LINUX_Commands/Outputs/Image2.png)|
+  | |![Image3.png](./LINUX_Commands/Outputs/Image3.png)|
+  | |![Image4.png](./LINUX_Commands/Outputs/Image4.png)|
+  | |![Image5.png](./LINUX_Commands/Outputs/Image5.png)|
+  | |![Image6.png](./LINUX_Commands/Outputs/Image6.png)|
+  | |![Image7.png](./LINUX_Commands/Outputs/Image7.png)|
+  | |![Image8.png](./LINUX_Commands/Outputs/Image8.png)|
