@@ -1,0 +1,170 @@
+//touch creates an empty file named Data.csv
+liveuser@localhost-live:~$ touch Data.csv
+
+//vi opens the file in the vi text editor to add content.
+liveuser@localhost-live:~$ vi Data.csv
+
+//This finds and prints all lines where the Department is "Engineering".
+//grep → Searches for specific words in a file
+
+liveuser@localhost-live:~$ grep 'Engineering' Data.csv
+102,Bob,25,50000,Engineering
+105,Eve,28,60000,Engineering
+108,Hank,32,68000,Engineering
+
+//Prints the first 10 lines by default.
+
+liveuser@localhost-live:~$ head Data.csv
+ID,Name,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+
+//Prints the first 5 lines.
+
+liveuser@localhost-live:~$ head -5 Data.csv
+ID,Name,Salary,Department
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+
+//Prints the last 3 lines.
+
+liveuser@localhost-live:~$ tail -3 Data.csv
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+
+//Displays the number of lines in the file
+
+liveuser@localhost-live:~$ wc -l Data.csv
+11 Data.csv
+
+//Prints the number of fields (columns) in the first row.
+ 
+liveuser@localhost-live:~$ awk -F',' '{print NF; exit}' Data.csv
+4
+
+//Prints the 3rd column (Salary).
+
+liveuser@localhost-live:~$ awk -F',' '{print $3}' Data.csv
+Salary
+30
+25
+5
+40
+28
+38
+27
+32
+29
+31
+
+//Also prints the 3rd column (Salary) but uses cut instead of awk.
+
+liveuser@localhost-live:~$ cut -d, -f3 Data.csv
+Salary
+30
+25
+5
+40
+28
+38
+27sort 
+32
+29
+31
+
+//Prints Name(column2) and Salary(column3) side by side.
+
+liveuser@localhost-live:~$ awk -F',' '{print $2,$3}' Data.csv
+Name Salary
+Alice 30
+Bob 25
+Charlie 5
+David 40
+Eve 28
+Frank 38
+Grace 27
+Hank 32
+Ivy 29
+Jack 31
+
+//Sorts the file alphabetically 
+
+liveuser@localhost-live:~$ sort Data.csv
+101,Alice,30,70000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+105,Eve,28,60000,Engineering
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+110,Jack,31,71000,HR
+ID,Name,Salary,Department
+
+//Sort by using salary. In here, topics also sorting
+
+liveuser@localhost-live:~$ awk -F',' '{print $4,$2}' Data.csv | sort
+50000 Bob
+60000 Eve
+62000 Ivy
+68000 Hank
+70000 Alice
+71000 Jack
+72000 Grace
+75000 Frank
+80000 Charlie
+90000 David
+Department Name
+
+
+liveuser@localhost-live:~$ sort -t',' -k3,3nr Data.csv
+104,David,40,90000,HR
+106,Frank,38,75000,HR
+108,Hank,32,68000,Engineering
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+107,Grace,27,72000,Data Science
+102,Bob,25,50000,Engineering
+103,Charlie,5,80000,Data Science
+ID,Name,Salary,Department
+
+
+liveuser@localhost-live:~$ sort -t',' -k3,3r Data.csv
+ID,Name,Salary,Department
+103,Charlie,5,80000,Data Science
+104,David,40,90000,HR
+106,Frank,38,75000,HR
+108,Hank,32,68000,Engineering
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+107,Grace,27,72000,Data Science
+102,Bob,25,50000,Engineering
+
+liveuser@localhost-live:~$ sort -t',' -k4,4 -n -r Data.csv
+104,David,40,90000,HR
+103,Charlie,5,80000,Data Science
+106,Frank,38,75000,HR
+107,Grace,27,72000,Data Science
+110,Jack,31,71000,HR
+101,Alice,30,70000,Data Science
+108,Hank,32,68000,Engineering
+109,Ivy,29,62000,Data Science
+105,Eve,28,60000,Engineering
+102,Bob,25,50000,Engineering
+ID,Name,Salary,Department
+
