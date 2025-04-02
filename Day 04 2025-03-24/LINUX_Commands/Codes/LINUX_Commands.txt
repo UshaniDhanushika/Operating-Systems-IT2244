@@ -1,0 +1,86 @@
+//'cal' is shows the current month's calendar, with the 
+current day highlighted.
+
+liveuser@ushani-live:~$ cal  
+
+     April 2025     
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30         
+
+
+//'date +%d' prints the current day of the month in two-digit format
+
+liveuser@ushani-live:~$ date +%d
+02
+             
+//'date +%A' prints the full name of the current day of the week
+
+liveuser@ushani-live:~$ date +%A
+Wednesday
+			 
+
+//'date +%a' prints the shortened name of the current day of the week (three-letter format).
+
+liveuser@ushani-live:~$ date +%a
+Wed
+
+//'date +%B' prints the full name of the current month.
+
+liveuser@ushani-live:~$ date +%B
+April
+
+//'date +%b' prints the short name of the current month in three-letter format.
+
+liveuser@ushani-live:~$ date +%b
+Apr
+
+//'date +%y' prints the last two digits of the current year (shortened year format).
+
+liveuser@ushani-live:~$ date +%y
+25
+
+//'date +%m' prints the current month as a two-digit number 
+
+liveuser@ushani-live:~$ date +%m
+04
+
+//'date +%H' prints the current hour in 24-hour format 
+
+liveuser@ushani-live:~$ date +%H
+09
+
+//'date +%M' prints the current minute as a two-digit number (00 to 59).
+
+liveuser@ushani-live:~$ date +%M
+47
+
+//'date +%S' prints the current second as a two-digit number (00 to 59).
+
+liveuser@ushani-live:~$ date +%S
+54
+
+
+//Create 'sh' files , get user input and display greeting
+
+//Create the 'sh' file:
+liveuser@ushani-live:~$ touch abc.sh
+
+//Edit the file with vi:
+liveuser@ushani-live:~$ vi abc.sh
+
+//Change the file permissions(Compulsory):
+liveuser@ushani-live:~$ chmod 777 abc.sh
+
+//Execute the script:
+liveuser@ushani-live:~$ ./abc.sh
+
+Enter your Name: 
+Ushani
+Hi Ushani
+
+
+
