@@ -1,0 +1,257 @@
+//Q1) Get the calendar and date
+
+liveuser@ushani:~$ cal
+     April 2025     
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30         
+                    
+liveuser@ushani:~$ date +%d
+06
+
+
+/*
+Q2) Get the student's name and marks for the 3 subjects from user than calculate 
+
+Output: 
+		Enter the name: Isuru
+		Enter the mark for subject1 : 80
+		Enter the mark for subject2 : 90
+		Enter the mark for subject3 : 70
+		Total = 240
+		Average = 80
+		
+*/
+
+
+liveuser@ushani:~$  touch marks.sh
+liveuser@ushani:~$ vi marks.sh
+
+echo "Enter the Name: "
+read x
+echo "Enter the mark for subject1 : "
+read y
+echo "Enter the mark for subject2 : "
+read z
+echo "Enter the mark for subject3 : "
+read w
+sum=$(($y+$z+$w))
+echo "Total: " $sum
+avg=$(($sum/3))
+echo "Average: " $avg
+
+liveuser@ushani:~$ chmod 777 marks.sh
+liveuser@ushani:~$ ./marks.sh
+Enter the Name: 
+Ushani
+Enter the mark for subject1 : 
+80
+Enter the mark for subject2 : 
+90
+Enter the mark for subject3 : 
+70
+Total:  240
+Average:  80
+
+
+/*
+Q3) Create a calculator with arithmetic operators 
+
+Output: 
+		Enter the first number: 4
+		Enter the second number: 2
+		Summation: 6
+		Substraction: 6
+		Division: 2
+		Multiplication: 8
+*/
+
+
+liveuser@ushani:~$ touch calculator.sh
+liveuser@ushani:~$ vi  calculator.sh
+
+
+echo "Enter the first number: "
+read x
+echo "Enter the second number: "
+read y
+sum=$(($x+$y))
+echo "Summation: " $sum
+sub=$(($x-$y))
+echo "Substraction: " $sub
+div=$(($x/$y))
+echo "Division: " $div
+mul=$(($x*$y))
+echo "MUltiplication: " $mul
+
+liveuser@ushani:~$ chmod 777 calculator.sh
+liveuser@ushani:~$ ./calculator.sh
+Enter the first number: 
+4
+Enter the second number: 
+2
+Summation:  6
+Substraction:  2
+Division:  2
+MUltiplication:  8
+
+/*
+Q4) Get the days based on the user input number
+
+Output:
+		Enter the number: 5
+		Friday
+
+*/
+
+liveuser@ushani:~$ touch day.sh
+liveuser@ushani:~$ vi day.sh
+
+echo "Enter the number: "
+read x
+case $x in
+1)echo "Monday";;
+2)echo "Tuesday";;
+3)echo "Wednesday";;
+4)echo "Thursday";;
+5)echo "Friday";;
+6)echo "Saturday";;
+7)echo "Sunday";;
+*)echo "Invalid Number";;
+esac
+
+liveuser@ushani:~$ chmod 777 day.sh
+liveuser@ushani:~$ ./day.sh
+Enter the number: 
+6
+Saturday
+
+
+/*
+
+Q5)	Verify whether your username is correct or not(use your name as incorrect)
+	Output:
+		Enter user name:
+		Mino
+		Username is correct
+		Enter user name:
+		mino
+		Username is incorrect
+		
+*/
+
+liveuser@ushani:~$ touch name.sh
+liveuser@ushani:~$ vi name.sh
+
+correct_username="Ushani"
+echo "Enter user name:"
+read input_username
+if [ "$input_username" == "$correct_username" ]; then
+  echo "Username is correct"
+else
+  echo "Username is incorrect"
+fi
+
+
+liveuser@ushani:~$ chmod 777 name.sh
+liveuser@ushani:~$ ./name.sh
+Enter user name:
+Ushani
+Username is correct
+liveuser@ushani:~$ ./name.sh
+Enter user name:
+ushani
+Username is incorrect
+
+/*
+Q6)	Output: Enter two numbers:
+		7 5
+		7 is greater than 5
+	
+	Output: Enter two numbers:
+		1 9
+		1 is less than 9
+
+*/
+
+liveuser@ushani:~$ touch max.sh
+liveuser@ushani:~$ vi max.sh
+
+echo "Enter two numbers:"
+read num1
+echo "Enter two numbers:"
+read num2
+
+if [ $num1 -gt $num2 ]; then
+  echo "$num1 is greater than $num2"
+elif [ $num1 -lt $num2 ]; then
+  echo "$num1 is less than $num2"
+else
+  echo "$num1 is equal to $num2"
+fi
+
+
+liveuser@ushani:~$ chmod 777 value.sh
+liveuser@ushani:~$ ./value.sh
+Enter two numbers:
+7
+Enter two numbers:
+8
+7 is less than 8
+liveuser@ushani:~$ ./value.sh
+Enter two numbers:
+9
+Enter two numbers:
+5
+9 is greater than 5
+liveuser@ushani:~$ ./value.sh
+Enter two numbers:
+8
+Enter two numbers:
+8
+8 is equal to 8
+liveuser@ushani:~$ 
+
+/*
+Q7) Create simple calculator using "expr" command same as the Q3
+
+
+liveuser@localhost-live:~$ touch expr.sh
+liveuser@localhost-live:~$ vi expr.sh
+
+echo "Enter the first number:"
+read num1
+
+echo "Enter the second number:"
+read num2
+
+sum=$(expr $num1 + $num2)
+sub=$(expr $num1 - $num2)
+mul=$(expr $num1 \* $num2)  //if you multiply, use a backslash
+div=$(expr $num1 / $num2)
+
+echo "Summation: $sum"
+echo "Substraction: $sub"
+echo "Multiplication: $mul"
+echo "Division: $div"
+
+liveuser@localhost-live:~$ chmod 777 expr.sh 
+liveuser@localhost-live:~$ ./expr.sh
+Enter the first number:
+8
+Enter the second number:
+4
+Summation: 12
+Substraction: 4
+Multiplication: 32
+Division: 2
+
+expr is a tool in Linux used to do basic math or work with text in shell scripts.
+It helps :
+	Add, subtract, multiply, divide numbers
+	Find the length of a word
+	Cut part of a word
+
