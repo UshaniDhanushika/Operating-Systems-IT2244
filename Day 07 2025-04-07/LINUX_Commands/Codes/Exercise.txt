@@ -1,0 +1,228 @@
+//Q1)
+
+	Write a code for small astrology based on your life path number for that get date 
+	of birth from user then calculate life path number (used switch case)
+
+	ex: 
+		Date : 23
+	
+		calculation for life path number:
+			a = date % 10		3
+			b = date / 10		2
+			c = a + b			5
+		
+		if life path number:
+			1 : Lucky
+			2 : Carefully do your work
+			3 : Storger
+			4 : Happy
+			5 : Can get help
+			6 : Doubt
+			7 : Sad
+			8 : Like
+			9 : Courage
+
+touch astrology.sh
+vi astrology.sh	
+	
+echo "Enter Your Birth Date: "
+read date
+a=$(($date % 10))
+b=$((date / 10))
+c=$(( $a + $b))
+
+case "$c" in
+1)echo " Lucky ";;
+2)echo " Carefully do your work " ;;
+3)echo " Storger " ;;
+4)echo " Happy " ;;
+5)echo " Can get help " ;;
+6)echo " Doubt " ;;
+7)echo " Sad " ;
+8)echo " Like " ;;
+9)echo " Courage";;
+*)echo " Invlid Option ";;
+esac
+
+	chmod 777 astrology.sh
+	./astrology.sh
+	
+
+
+//Q2)
+
+
+Give list of numbers then calculate the summation and multiplication using for loop
+
+Example:   	
+		1 2 3 4 5
+		
+		summation = 15
+		multiplication = 120
+
+
+
+touch cal.sh
+vi cal.sh
+	
+
+summation=0
+multiplication=1
+
+for num in 1 2 3 4 5 6
+do
+  summation=$((summation + num))
+  multiplication=$((multiplication * num))
+done
+
+echo "Summation = $summation"
+echo "Multiplication = $multiplication"
+
+chmod 777 cal.sh
+./cal.s
+
+
+
+//Q3)
+ Print the integers from 1 to 10 using for loop
+
+
+	
+touch while.sh
+vi while.sh
+
+i=1
+
+while [ $i -le 10 ]
+do
+ echo $i
+ i=$((i + 1))  
+done
+
+chmod 777 while.sh
+./while.sh
+
+
+
+//Q4)
+Print below pattern using nested loop columns = 7 , rows = 7
+
+i)  *
+	* *
+	* * *
+	* * * *
+	* * * * *
+	* * * * * *
+	* * * * * * *
+	
+ii) * * * * * * *
+	* * * * * *
+	* * * * *
+	* * * * 
+	* * *
+	* *
+	*	
+
+
+iii)  1
+	  2 2
+	  3 3 3
+	  4 4 4 4 
+	  5 5 5 5 5 
+	  6 6 6 6 6 6
+	  
+	  
+iv)   1
+	  1 2
+	  1 2 3
+	  1 2 3 4
+	  1 2 3 4 5
+	  1 2 3 4 5 6
+	  
+	  
+v)         *
+		  * *
+		 * * *
+		* * * *
+	   * * * * *
+
+
+touch pattern.sh
+vi pattern.sh
+
+1)
+
+echo "**************1**************"
+	
+for((i=1; i<=7; i++))
+do
+for((j=1; j<=i; j++))
+do
+echo -n  "*"
+done
+echo " "
+done
+echo " "
+
+
+2)
+
+echo "**************2**************"
+for((i=0; i<=7; i++))
+do
+for((j=7; j>i; j--))
+do
+echo -n  "*"
+done
+echo " "
+done
+
+3)
+
+echo "**************3**************"
+for ((i=1; i<=6; i++))
+do
+for ((j=1; j<=i; j++))
+do
+echo -n " $i "
+done
+echo
+done
+
+
+
+
+4)
+
+echo "**************4**************"
+for((i=1; i<=6; i++))
+do
+for((j=1; j<=i; j++))
+do
+echo -n " $j "
+done
+echo " "
+done
+
+
+5)
+
+echo "**************2**************"
+
+rows=5
+for ((i=1; i<=rows; i++))
+do
+
+for ((j=i; j<rows; j++))
+do
+echo -n " "
+done
+
+
+for ((k=1; k<=i; k++))
+do
+echo -n "* "
+done
+
+echo
+done
