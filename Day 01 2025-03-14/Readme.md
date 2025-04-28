@@ -1,4 +1,4 @@
-| Codes | Output |
+ | Codes | Output |
   |-------|--------|
-  |['Print.bat'](./Codes/Print.bat)|![Print.png](./Outputs/print.png)|
-  
+  ['AgeCalculator.bat'](./Codes/AgeCalculator.bat)|![AgeCalculator.png](./Outputs/AgeCalculator.png)|
+  ['DateCalculator.bat'](./Codes/DateCalculator.bat)|![DateCalculator.png](./Outputs/DateCalculator.png)|
