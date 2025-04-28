@@ -1,0 +1,122 @@
+Q1)***************************************
+	Fibonacci series
+	
+	Output: First 10 Fibonacci numbers:
+	0 1 1 2 3 5 8 13 21 34
+
+Answer:
+	
+touch Q1.sh
+chmod 777 Q1.sh
+vi Q1.sh	
+
+	
+// Declare a variable 'num'
+let num
+
+// Prompt the user to enter a number
+echo "Enter the number: "
+
+// Read input into 'num'
+read num
+
+// Print a blank line
+echo " "
+
+// Initialize variables for Fibonacci sequence
+a=0
+b=1
+
+// Loop from i=0 to i<num
+for((i=0; i<num; i++))
+do
+    // Print the current value of 'a'
+    echo $a
+
+    // Print a blank line
+    echo " "
+
+    // Calculate the next Fibonacci number
+    c=$(($a + $b))
+
+    // Update 'a' and 'b' for the next iteration
+    a=$b
+    b=$c
+done
+
+./Q1.sh
+
+
+Q2)**********************************************
+
+	
+touch Q2.sh
+chmod 777 Q2.sh
+vi Q2.sh	
+
+Factorial
+Output: Factorial of 5 is: 120
+
+Answer:
+
+// Initialize fact to 1
+fact=1
+
+// Loop from i=1 to i<=5
+for((i=1; i<=5; i++))
+do
+    // Multiply current fact with i and store it back in fact
+    fact=$(($fact * $i))
+done
+
+// Output the result
+echo "Factorial of 5 is: "$fact
+
+	
+./Q2.sh	
+
+
+Q3)********************************************
+
+Multiples of 3 between 1 and 50:
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+48
+
+
+Answer:
+
+touch Q3.sh
+chmod 777 Q3.sh
+vi Q3.sh	
+
+// Print the heading
+echo "Multiples of 3 between 1 and 50: "
+
+// Initialize i with 3
+let i=3
+
+// Start the while loop: run while i is less than or equal to 50
+while [ $i -le 50 ]
+do
+    // Print the current value of i
+    echo $i
+
+    // Increment i by 3
+    i=$(($i + 3))
+done
+
+./Q3.sh
