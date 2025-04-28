@@ -1,0 +1,187 @@
+Q1)//////////////////////////////////
+
+Print Multiplication table using for loop
+		1 x 2 = 2
+		2 x 2 = 4
+		.....
+		
+Answer:
+		
+touch Q1.sh
+chmod 777 Q1.sh
+vi Q1.sh	
+
+echo "Enter the number you want to multiple:"
+read x
+
+let i = 1;
+
+for((i=1;i<=12;i++))
+do
+result=$(($i*$x))
+echo $i "x" $x = "$result"
+done
+
+./Q1.sh
+
+
+
+
+Q2) /////////////////////////////////////
+
+		 *
+	    ***
+	   *****
+	  *******
+	 *********
+	  *******
+	   *****
+	    ***
+		 *
+Answer:
+
+touch Q2.sh
+chmod 777 Q2.sh
+vi Q2.sh	
+		
+		
+rows=5
+#Top half of the diamond
+
+for((i=1;i<=rows;i++))
+do
+for((j=i;j<rows;j++))
+do
+echo -n " "
+done
+for((k=1;k<=((2*i-1));k++))
+do
+echo -n "*"
+done
+echo
+done
+
+#bottom half of the diamond
+
+for((i=rows-1;i>=1;i--))
+do
+for((j=rows;j>i;j--))
+do
+echo -n " "
+done
+for((k=1;k<=((2*i-1));k++))
+do
+echo -n "*"
+done
+echo
+done
+
+./Q2.sh
+
+
+Q3)/////////////////////////////////////
+
+    *****
+	*	*
+	*	*
+	*	*
+	*****
+
+Answer:
+
+
+touch Q3.sh
+chmod 777 Q3.sh
+vi Q3.sh	
+
+for((i=1; i<=5; i++))
+do
+  for((j=1; j<=5; j++))
+  do
+    if [ $i -eq 1 ] || [ $i -eq 5 ] || [ $j -eq 1 ] || [ $j -eq 5 ]
+    then
+      echo -n "*"
+    else
+      echo -n " "
+    fi
+  done
+  echo
+done
+
+./Q3.sh
+
+
+
+Q4)/////////////////////////////////////
+
+Program to print Fibonacci series and calculate the sum
+
+Answer:
+
+touch Q4.sh
+chmod 777 Q4.sh
+vi Q4.sh	
+
+
+echo "Enter the number: "
+read num
+echo
+a=0
+b=1
+sum=0
+
+echo "Fibonacci Series:"
+
+for((i=0; i<num; i++))
+do
+  
+  echo -n "$a "
+  sum=$(($sum + $a))
+  c=$(($a + $b))
+  a=$b
+  b=$c
+done
+
+echo
+echo "Sum of the first $num Fibonacci numbers is: $sum"
+
+
+./Q4.sh
+
+
+
+Q5)/////////////////////////////////////
+
+Program to find and sum all prime numbers between 1 and 100
+
+
+touch Q5.sh
+chmod 777 Q5.sh
+vi Q5.sh	
+
+
+sum=0  
+
+
+for((i=2; i<=100; i++))
+do
+  prime=1  
+
+  for((j=2; j<=i/2; j++))
+  do
+    if [ $((i % j)) -eq 0 ]
+    then
+      prime=0 
+      break
+    fi
+  done
+
+  if [ $prime -eq 1 ]
+  then
+    sum=$(($sum + $i))
+  fi
+done
+
+echo "Sum of prime numbers between 1 and 100 is: $sum"
+
+./Q5.sh
