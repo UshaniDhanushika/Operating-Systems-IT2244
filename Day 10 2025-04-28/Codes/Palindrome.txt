@@ -1,0 +1,14 @@
+Q) Check if the String is a Palindrome or Not
+
+
+echo "Enter a string: "
+read str
+
+str = $(echo "$str" | tr ) '[:upper:]' '[:lower:]'
+
+if [ "$(echo $str | rev )" == "$str"); then
+	
+	echo "This is a palindrome"
+else
+	echo "This is not a palindrome"
+fi
