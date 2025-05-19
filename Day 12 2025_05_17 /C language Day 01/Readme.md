@@ -1,5 +1,4 @@
 
-# Linux Commands
 
   | Codes | Output |
   |-------|--------|
