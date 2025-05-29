@@ -4,3 +4,4 @@
   | |![2.png](./Outputs/2.png)|
   | |![3.png](./Outputs/3.png)|
   | |![4.png](./Outputs/4.png)|
+  |['ex3.c'](./Codes/ex3.c)|![ex3.png](./Outputs/ex3.png)|
