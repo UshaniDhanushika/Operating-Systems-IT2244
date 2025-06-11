@@ -1,0 +1,15 @@
+touch C_Day1.c
+vi C_Day1.c
+
+#include<stdio.h>
+
+int main(){
+	printf("Hello World!");
+	return 0;
+}
+
+
+gcc C_Day1.c -o C_Day1
+
+./C_Day1
+

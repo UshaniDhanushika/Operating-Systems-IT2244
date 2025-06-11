@@ -1,0 +1,59 @@
+// ********************************************************************
+
+//assing a interger values like this three types 
+
+#include<stdio.h>
+int main(){
+	int age = 25
+	printf("%d\n",age);
+}
+
+
+
+
+// ********************************************************************
+
+//Assign a new value for the same variable
+
+
+#include<stdio.h>
+int main(){
+int age =25;
+printf("Age:%d\n",age);
+
+printf("\nC Programming\n");
+age = 32;
+printf("Updated Age:%d\n",age);
+}
+
+
+// ********************************************************************
+//Initialize floating number
+
+#include<stdio.h>
+int main(){
+
+	float number = 10.9f;  
+	printf("\nNumber:%f",number);   
+	
+	printf("\nNumber(2 decimal points):%.1f",number);  
+
+}
+
+
+// ********************************************************************
+
+//Characters
+
+#include<stdio.h>
+int main(){
+char character='z';
+printf("Character%c",character);
+printf("Character are in interger:%d\n",character);  // 
+}
+
+
+
+
+
+
